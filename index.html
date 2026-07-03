@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K. Vijay Kumar | F1 Racing & High-Speed Tech Portfolio</title>
+    <meta name="description" content="F1 Racing Theme Portfolio of K. Vijay Kumar - IoT, Cybersecurity, & Blockchain Engineer. High-speed systems, threat intelligence, and edge AI.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,500;0,700;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background grid & racetrack overlay -->
+    <div class="carbon-grid"></div>
+    <div class="speed-glow"></div>
+
+    <!-- F1 Dashboard HUD Top Banner -->
+    <div class="f1-hud-banner">
+        <div class="hud-item"><span class="hud-label">DRIVER:</span> <span class="hud-val">KVK-P1</span></div>
+        <div class="hud-item"><span class="hud-label">STATUS:</span> <span class="hud-val green-text"><span class="green-dot"></span> TRACK_GREEN</span></div>
+        <div class="hud-item"><span class="hud-label">DRS:</span> <span class="hud-val" id="drs-indicator">AVAILABLE</span></div>
+        <div class="hud-item hidden-mobile"><span class="hud-label">BEST_LAP:</span> <span class="hud-val red-text">1:14.382</span></div>
+        <div class="hud-item"><span class="hud-label">LIVE_SPEED:</span> <span class="hud-val red-text" id="live-speed-hud">0 KM/H</span></div>
+    </div>
+
+    <!-- Floating Speedway Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <span class="logo-racing-stripes">///</span>
+            <span class="logo-text">KVK SPEEDWAY</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="https://kv035131-oss.github.io/RESUME/" target="_blank" class="nav-btn">
+            RESUME <i class="fas fa-external-link-alt"></i>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobile-nav-drawer">
+        <a href="#hero" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#achievements" class="mobile-link">Achievements</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+        <!-- Racetrack spline drawing canvas -->
+        <canvas id="racetrackCanvas"></canvas>
+
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="telemetry-badge red-border">
+                    <span class="pulse-dot-red"></span> ENGINE MAP 1 // V6 TURBO HYBRID
+                </div>
+                <h1 class="hero-title">K. VIJAY KUMAR</h1>
+                <h2 class="hero-subtitle">IoT, Cybersecurity, & Blockchain Engineer</h2>
+                <p class="hero-tagline">Optimizing system flow and threat parameters with high-performance telemetry.</p>
+                
+                <!-- Pit Telemetry Console -->
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="terminal-title">RACE_ENGINE_DIAGNOSTICS // SHELL</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="term-prompt">kvk@speedway:~$</span> <span id="typed-text"></span><span class="cursor">|</span></p>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">LAUNCH CONTROL <i class="fas fa-chevron-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary">BOX BOX BOX <i class="fas fa-satellite"></i></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Sector 1: Profile & Pit Stops -->
+    <section id="about" class="section about-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title"><i class="fas fa-id-card"></i> Driver Profile</h2>
+            <div class="about-grid">
+                <!-- Profile bio card -->
+                <div class="about-card glass-panel">
+                    <div class="profile-header">
+                        <div class="avatar-hex">
+                            <div class="hex-inner">
+                                <i class="fas fa-helmet-safety"></i>
+                            </div>
+                        </div>
+                        <div class="profile-titles">
+                            <h3>K. Vijay Kumar</h3>
+                            <p class="red-text">kv035131@gmail.com</p>
+                            <p class="text-muted">+91 7676441734</p>
+                        </div>
+                    </div>
+                    <p class="profile-description">
+                        An agile, results-oriented engineer specializing in <strong>IoT, Cybersecurity, and Blockchain</strong>. I build high-speed, secure system flows, applying edge-AI architectures and real-time network logs to optimize defenses. Focused on micro-controller integrations, automation, and full-stack cybersecurity infrastructures.
+                    </p>
+                    <div class="social-links-grid">
+                        <a href="https://github.com/kv035131-oss" target="_blank" class="social-link-btn">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/vijay-k-37b8402a1" target="_blank" class="social-link-btn">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Education timeline styled as Pit Stops -->
+                <div class="education-card glass-panel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-stopwatch"></i> Education & Milestones</h3>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023 - 2027 (Expected)</div>
+                                <h4>Bachelor of Engineering (B.E.) in CSE</h4>
+                                <p class="red-text">Alva’s Institute of Engineering and Technology</p>
+                                <p class="spec">Specialization: IoT, Cybersecurity and Blockchain</p>
+                                <div class="badge-gpa">CGPA: 8.6 / 10</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023 Completed</div>
+                                <h4>Class 12 (Science & Mathematics)</h4>
+                                <p>Karnataka State Board</p>
+                                <div class="badge-gpa">Score: 84.6%</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2021 Completed</div>
+                                <h4>Class 10 (Secondary Education)</h4>
+                                <p>CBSE Board</p>
+                                <div class="badge-gpa">Score: 80.06%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telemetry Skills Section -->
+    <section id="skills" class="section skills-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title text-center"><i class="fas fa-sliders"></i> Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <!-- Engine Calibration (Languages) -->
+                <div class="skill-category glass-panel">
+                    <div class="category-header">
+                        <i class="fas fa-engine category-icon"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Python</span><span class="skill-perc">92%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>C / C++</span><span class="skill-perc">85%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Embedded C</span><span class="skill-perc">80%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-item flex-wrap">
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Data Structures</span>
+                            <span class="tech-badge">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aerodynamic & Downforce (Cybersecurity) -->
+                <div class="skill-category glass-panel">
+                    <div class="category-header">
+                        <i class="fas fa-wind category-icon"></i>
+                        <h3>Cybersecurity</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Wazuh SIEM</span><span class="skill-perc">80%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MITRE ATT&CK Framework</span><span class="skill-perc">85%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Threat Hunting & Analysis</span><span class="skill-perc">82%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 82%;"></div></div>
+                        </div>
+                        <div class="skill-item flex-wrap">
+                            <span class="tech-badge">Log Analysis</span>
+                            <span class="tech-badge">Network Security</span>
+                            <span class="tech-badge">SOC Monitoring</span>
+                            <span class="tech-badge">Incident Response</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chassis & Suspension (Frameworks & Tools) -->
+                <div class="skill-category glass-panel">
+                    <div class="category-header">
+                        <i class="fas fa-car-chassis category-icon"></i>
+                        <h3>Frameworks & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>FastAPI & React</span><span class="skill-perc">82%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 82%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>TensorFlow & Keras</span><span class="skill-perc">78%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 78%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>OpenCV & NumPy</span><span class="skill-perc">85%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item flex-wrap">
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Wireshark</span>
+                            <span class="tech-badge">Git & GitHub</span>
+                            <span class="tech-badge">Filebeat</span>
+                            <span class="tech-badge">Linux</span>
+                            <span class="tech-badge">MATLAB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart ECU Hub (IoT & Embedded) -->
+                <div class="skill-category glass-panel">
+                    <div class="category-header">
+                        <i class="fas fa-microchip category-icon"></i>
+                        <h3>IoT & Embedded Systems</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Raspberry Pi 4</span><span class="skill-perc">90%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>ESP32 & Arduino</span><span class="skill-perc">88%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MQTT Broker Mesh</span><span class="skill-perc">85%</span></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item flex-wrap">
+                            <span class="tech-badge">RFID</span>
+                            <span class="tech-badge">I2C</span>
+                            <span class="tech-badge">SPI</span>
+                            <span class="tech-badge">UART</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core CS Concepts Board -->
+            <div class="concepts-box glass-panel text-center">
+                <h3>Core Architecture Competencies</h3>
+                <div class="concepts-grid">
+                    <div class="concept-tag"><i class="fas fa-gauge-high"></i> Real-Time Systems</div>
+                    <div class="concept-tag"><i class="fas fa-server"></i> Operating Systems</div>
+                    <div class="concept-tag"><i class="fas fa-network-wired"></i> Computer Networks</div>
+                    <div class="concept-tag"><i class="fas fa-database"></i> DBMS</div>
+                    <div class="concept-tag"><i class="fas fa-key"></i> Cryptography</div>
+                    <div class="concept-tag"><i class="fas fa-link"></i> Blockchain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Race Control) -->
+    <section id="projects" class="section projects-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title text-center"><i class="fas fa-tower-broadcast"></i> Featured Projects</h2>
+            
+            <div class="project-details-stack">
+                
+                <!-- Project 1: AI Cyber Defence System -->
+                <div class="project-box glass-panel">
+                    <div class="project-body-grid">
+                        <div class="project-info-side">
+                            <div class="project-meta-head">
+                                <span class="project-year">2025</span>
+                                <h3>AI Cyber Defence System (ACDS)</h3>
+                            </div>
+                            <p class="project-desc">
+                                Engineered a high-speed Security Operations Center (SOC) threat detection platform that ingests network logs in real-time, executing LLM-based playbooks to defend the network nodes during high-volume cyber assaults.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Ingests threat metrics dynamically, detecting brute-force intrusions, command-and-control beacon links, and data exfiltration paths.</li>
+                                <li>Built a response engine powered by <strong>Gemini 2.0 Flash API</strong>, creating instant containment playbooks and attacker trajectory predictions.</li>
+                                <li>Constructed a React dashboard utilizing WebSockets to feed real-time alert logs streaming through Filebeat pipelines.</li>
+                            </ul>
+                            <div class="project-tech-list">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">WebSocket</span>
+                                <span class="tech-badge">Gemini 2.0 API</span>
+                                <span class="tech-badge">Filebeat</span>
+                            </div>
+                        </div>
+                        <div class="project-visual-side">
+                            <div class="cyber-console">
+                                <div class="console-tab">
+                                    <span>RACE_CONTROL_MONITOR.sh</span>
+                                    <span class="active-pulse"></span>
+                                </div>
+                                <div class="console-body" id="acds-console">
+                                    <!-- Populated by JS -->
+                                    <div class="sec-alert danger-alert">
+                                        <span class="blink">[CRITICAL]</span> OVERTAKE VULNERABILITY FOUND AT IP: 10.0.1.25
+                                    </div>
+                                    <div class="console-log">&gt; Vector mapping: MITRE T1071 C2 beaconing.</div>
+                                    <div class="console-log">&gt; Dispatching Gemini playbook optimizer...</div>
+                                    <div class="sec-alert success-alert">
+                                        &gt; Gemini auto-response: Reroute traffic via secure proxy.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Face Recognition Attendance System with Anti-Spoofing -->
+                <div class="project-box glass-panel">
+                    <div class="project-body-grid reverse">
+                        <div class="project-info-side">
+                            <div class="project-meta-head">
+                                <span class="project-year">2025 - Present</span>
+                                <h3>Face Recognition Attendance System with Anti-Spoofing</h3>
+                            </div>
+                            <p class="project-desc">
+                                Created an edge hardware-based attendance tracking platform designed to function in real-time. Features multi-threading architecture to scan multiple individuals simultaneously and contains anti-spoofing security measures to prevent photo/video bypass.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Configured and optimized detection software to run seamlessly on a <strong>Raspberry Pi 4</strong> single-board computer.</li>
+                                <li>Implemented <strong>Haar Cascade</strong> face boundary localization alongside <strong>LBPH (Local Binary Patterns Histograms)</strong> for rapid database comparison under constrained edge parameters.</li>
+                                <li>Integrated secure automated logging using robust multi-thread safe CSV output directories, planning modular expansions for RFID triggers and Azure Cloud sync.</li>
+                            </ul>
+                            <div class="project-tech-list">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">OpenCV</span>
+                                <span class="tech-badge">Raspberry Pi 4</span>
+                                <span class="tech-badge">Multi-threading</span>
+                                <span class="tech-badge">Haar Cascade</span>
+                                <span class="tech-badge">LBPH</span>
+                            </div>
+                        </div>
+                        <div class="project-visual-side">
+                            <div class="face-scanner-box">
+                                <div class="scanner-grid-line"></div>
+                                <div class="face-placeholder">
+                                    <svg viewBox="0 0 100 100" class="face-vector">
+                                        <!-- Animated face landmarks -->
+                                        <circle cx="50" cy="50" r="45" stroke="#ff183e" stroke-width="1" fill="none" stroke-dasharray="4 4" />
+                                        <path d="M 30 40 Q 40 45 50 40 Q 60 45 70 40" stroke="#10B981" stroke-width="1.5" fill="none" id="face-brow" />
+                                        <circle cx="40" cy="48" r="4" fill="#10B981" class="scanner-eye" />
+                                        <circle cx="60" cy="48" r="4" fill="#10B981" class="scanner-eye" />
+                                        <path d="M 50 48 L 50 62 L 45 65" stroke="#10B981" stroke-width="1.5" fill="none" />
+                                        <path d="M 38 72 Q 50 78 62 72" stroke="#10B981" stroke-width="1.5" fill="none" />
+                                        <!-- Face landmark points -->
+                                        <circle cx="40" cy="48" r="1.5" fill="#ff183e" />
+                                        <circle cx="60" cy="48" r="1.5" fill="#ff183e" />
+                                        <circle cx="50" cy="62" r="1.5" fill="#ff183e" />
+                                        <circle cx="38" cy="72" r="1.5" fill="#ff183e" />
+                                        <circle cx="62" cy="72" r="1.5" fill="#ff183e" />
+                                    </svg>
+                                    <div class="scanner-bbox">
+                                        <span class="corner top-left"></span>
+                                        <span class="corner top-right"></span>
+                                        <span class="corner bottom-left"></span>
+                                        <span class="corner bottom-right"></span>
+                                        <div class="bbox-label" id="scanner-bbox-label">VIJAY_KUMAR // 98.4%</div>
+                                    </div>
+                                </div>
+                                <div class="scanner-status">
+                                    <span class="tag">ANTISPOOF: OK</span>
+                                    <span class="tag green" id="scanner-status-tag">ATTENDANCE LOGGED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Skin Disease Detection System -->
+                <div class="project-box glass-panel">
+                    <div class="project-body-grid">
+                        <div class="project-info-side">
+                            <div class="project-meta-head">
+                                <span class="project-year">2025</span>
+                                <h3>Skin Disease Detection System</h3>
+                            </div>
+                            <p class="project-desc">
+                                Created an AI diagnosis heatmap processor utilizing convolutional model structures to analyze and flag epidermal lesions from visual image feeds.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Engineered a custom <strong>Convolutional Neural Network (CNN)</strong> model utilizing TensorFlow and Keras framework architectures for high-speed multi-class classification.</li>
+                                <li>Designed and deployed advanced pixel-level preprocessing configurations including rotations, normalization matrix transforms, and horizontal flips to optimize training.</li>
+                                <li>Achieved ~75% accuracy rating evaluated strictly through confusion matrices, F1 score metrics, and ROC classification curves.</li>
+                            </ul>
+                            <div class="project-tech-list">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">TensorFlow</span>
+                                <span class="tech-badge">Keras</span>
+                                <span class="tech-badge">CNN</span>
+                                <span class="tech-badge">OpenCV</span>
+                                <span class="tech-badge">NumPy</span>
+                            </div>
+                        </div>
+                        <div class="project-visual-side">
+                            <div class="cnn-visualizer-box">
+                                <div class="layer-nodes-flex">
+                                    <!-- Input Node -->
+                                    <div class="cnn-layer">
+                                        <span>INPUT</span>
+                                        <div class="nodes"><div class="node active"></div><div class="node active"></div><div class="node active"></div></div>
+                                    </div>
+                                    <div class="cnn-wires">
+                                        <svg height="120" width="40">
+                                            <line x1="0" y1="20" x2="40" y2="20" stroke="rgba(255, 24, 62, 0.4)" stroke-width="1.5" />
+                                            <line x1="0" y1="20" x2="40" y2="60" stroke="rgba(255, 24, 62, 0.2)" stroke-width="1" />
+                                            <line x1="0" y1="60" x2="40" y2="20" stroke="rgba(255, 24, 62, 0.2)" stroke-width="1" />
+                                            <line x1="0" y1="60" x2="40" y2="60" stroke="rgba(255, 24, 62, 0.4)" stroke-width="1.5" />
+                                            <line x1="0" y1="60" x2="40" y2="100" stroke="rgba(255, 24, 62, 0.2)" stroke-width="1" />
+                                            <line x1="0" y1="100" x2="40" y2="60" stroke="rgba(255, 24, 62, 0.2)" stroke-width="1" />
+                                            <line x1="0" y1="100" x2="40" y2="100" stroke="rgba(255, 24, 62, 0.4)" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <!-- Conv Layer -->
+                                    <div class="cnn-layer">
+                                        <span>CONV2D</span>
+                                        <div class="nodes"><div class="node active"></div><div class="node active"></div><div class="node active"></div><div class="node active"></div></div>
+                                    </div>
+                                    <div class="cnn-wires">
+                                        <svg height="120" width="40">
+                                            <line x1="0" y1="15" x2="40" y2="30" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+                                            <line x1="0" y1="45" x2="40" y2="30" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+                                            <line x1="0" y1="75" x2="40" y2="90" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+                                            <line x1="0" y1="105" x2="40" y2="90" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+                                        </svg>
+                                    </div>
+                                    <!-- Dense Layer -->
+                                    <div class="cnn-layer">
+                                        <span>DENSE</span>
+                                        <div class="nodes"><div class="node active"></div><div class="node active"></div></div>
+                                    </div>
+                                </div>
+                                <div class="cnn-output">
+                                    <div class="prediction-line">
+                                        <span>MELANOMA:</span>
+                                        <div class="bar-bg"><div class="bar-fill red" style="width: 8%;"></div></div>
+                                        <span>8%</span>
+                                    </div>
+                                    <div class="prediction-line">
+                                        <span>DERMATITIS:</span>
+                                        <div class="bar-bg"><div class="bar-fill green" style="width: 78%;"></div></div>
+                                        <span>78%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Podium Finishes -->
+    <section id="achievements" class="section achievements-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title text-center"><i class="fas fa-trophy"></i> Achievements & Certifications</h2>
+            
+            <div class="achievements-timeline">
+                <div class="ach-card glass-panel">
+                    <div class="ach-icon"><i class="fas fa-flag"></i></div>
+                    <div class="ach-details">
+                        <h4>CySecK CTF Competitor (2025)</h4>
+                        <p>Competed in Karnataka State's premier Cybersecurity Hackathon/CTF, solving complex challenges in web security, cryptography, and digital forensics.</p>
+                    </div>
+                </div>
+                
+                <div class="ach-card glass-panel">
+                    <div class="ach-icon"><i class="fas fa-gauge"></i></div>
+                    <div class="ach-details">
+                        <h4>Certified SOC Analyst Training</h4>
+                        <p>Completed intensive training covering Wazuh SIEM deployment, MITRE ATT&CK modeling, network traffic analysis, and structured incident response.</p>
+                    </div>
+                </div>
+
+                <div class="ach-card glass-panel">
+                    <div class="ach-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="ach-details">
+                        <h4>Gemini AI Agents Developer</h4>
+                        <p>Built reactive, autonomous AI agents using Google's Gemini LLM APIs during the Open Source India Workshop.</p>
+                    </div>
+                </div>
+
+                <div class="ach-card glass-panel">
+                    <div class="ach-icon"><i class="fas fa-code"></i></div>
+                    <div class="ach-details">
+                        <h4>LeetCode Algorithms Solver</h4>
+                        <p>Successfully completed 120+ algorithmic challenges in C++ covering Binary Trees, Graph Traversal, DP optimization, and sliding window designs.</p>
+                    </div>
+                </div>
+
+                <div class="ach-card glass-panel">
+                    <div class="ach-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <div class="ach-details">
+                        <h4>Multi-Hackathon Contender</h4>
+                        <p>Participated in multiple competitive hackathons centered around IoT mesh integrations, cybersecurity filters, and smart-city node controls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pit Entry & Contact Broadcaster -->
+    <section id="contact" class="section contact-section scroll-reveal">
+        <div class="section-container">
+            <h2 class="section-title text-center"><i class="fas fa-flag-checkered"></i> Contact Station</h2>
+            
+            <div class="contact-grid">
+                <!-- Pit Radio Form -->
+                <div class="contact-terminal glass-panel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-microphone-lines"></i> Driver Pit Radio</h3>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <form class="terminal-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Driver Name:</label>
+                                <input type="text" id="form-name" required placeholder="GUEST_TEAM_1">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Driver Email:</label>
+                                <input type="email" id="form-email" required placeholder="team@domain.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Transmission Subject:</label>
+                            <input type="text" id="form-subject" required placeholder="F1 Hardware project sync">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Radio Message:</label>
+                            <textarea id="form-message" rows="5" required placeholder="Broadcast telemetry data or message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                            Transmit Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="transmission-status" id="transmission-status-msg">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Radio Frequency info -->
+                <div class="contact-info-side">
+                    <div class="glass-panel info-box">
+                        <h4><i class="fas fa-envelope"></i> Email Address</h4>
+                        <p><a href="mailto:kv035131@gmail.com" class="red-text text-link">kv035131@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="glass-panel info-box">
+                        <h4><i class="fas fa-phone"></i> Radio Voice Line</h4>
+                        <p><a href="tel:+917676441734" class="red-text text-link">+91 7676441734</a></p>
+                    </div>
+
+                    <div class="glass-panel info-box">
+                        <h4><i class="fas fa-map-marker-alt"></i> Speedway Location</h4>
+                        <p>Karnataka, India</p>
+                    </div>
+
+                    <div class="glass-panel connection-log">
+                        <h4>Pit Receiver Logs</h4>
+                        <div class="log-lines">
+                            <p>[09:32:10] Scanning radio frequencies...</p>
+                            <p>[09:33:04] Audio feed encrypting...</p>
+                            <p>[09:35:12] PIT receiver status: READY FOR TRANSMISSION</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 K. Vijay Kumar. All downforce engines nominal.</p>
+            <p class="text-muted text-small">F1 POWER UNIT SECURED // SPEC 1.1.4</p>
+        </div>
+    </footer>
+
+    <!-- Core App JS -->
+    <script src="app.js"></script>
+</body>
+</html>
